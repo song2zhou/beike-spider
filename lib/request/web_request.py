@@ -50,7 +50,7 @@ class beike_spider() :
         headers = create_request_headers()
         # 遍历房价网页
         # for i in range(1, total_page + 1) :
-        for i in range(1, 2) :
+        for i in range(1, total_page) :
             target_sub_web = target_web + "pg{0}".format(i)
             print('request target web:', target_sub_web)
 
@@ -101,7 +101,7 @@ class beike_spider() :
     def store_price_info(self) :
         # 创建数据存储目录
         root_path = get_root_path()
-        store_dir_path = root_path + "/data/{0}/{1}".format(self.city_name, get_local_time_string())
+        store_dir_path = root_path + "/data/original_data/{0}/{1}".format(self.city_name, get_local_time_string())
         is_dir_exit = os.path.exists(store_dir_path)
         if not is_dir_exit :
             os.makedirs(store_dir_path)
@@ -109,6 +109,7 @@ class beike_spider() :
         # 存储格式化的房价数据到相应日期的文件中
         store_path = store_dir_path + "/{0}.csv".format(get_local_time_string())
         with open(store_path, "w") as fd :
+            fd.write("data, name, price, total\n")
             for price in self.price_info_list :
                 fd.write(price)
 
