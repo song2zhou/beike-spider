@@ -8,7 +8,7 @@
 
 - 安装python依赖环境`pip3 install -r requirements.txt`，国内环境可以指定软件源`pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/`
 
-- 根目录下执行爬虫脚本`python3 beike_spider.py`，爬虫自动爬取`http://[city_name].fang.ke.com/loupan/`下的房价数据，并根据当前日期[data]保存到data/[city_name]/data/xxx.csv文件中
+- 根目录下执行爬虫脚本`python3 beike_spider.py`，爬虫自动爬取`http://[city_name].fang.ke.com/loupan/`下的房价数据，并根据当前日期[data]保存到data/original_data/[city_name]/2020-xx-xx.csv文件中
 
 ### TODO
 

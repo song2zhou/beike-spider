@@ -101,7 +101,7 @@ class beike_spider() :
     def store_price_info(self) :
         # 创建数据存储目录
         root_path = get_root_path()
-        store_dir_path = root_path + "/data/original_data/{0}/{1}".format(self.city_name, get_local_time_string())
+        store_dir_path = root_path + "/data/original_data/{0}".format(self.city_name)
         is_dir_exit = os.path.exists(store_dir_path)
         if not is_dir_exit :
             os.makedirs(store_dir_path)
